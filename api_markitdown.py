@@ -182,7 +182,7 @@ async def convert_file(
                 media_type="text/markdown",
                 filename=(file.filename or "output") + ".md"
             )
-        return JSONResponse(out.model_dump())
+        return out
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
     finally:
